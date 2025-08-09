@@ -7,7 +7,7 @@
   - **Styling:** TailwindCSS
   - **Database:** TiDB Cloud (Serverless Tier)
   - **Authentication:** better-auth
-  - **AI/LLM:** Free tier of an accessible LLM API (e.g., Gemini)
+  - **AI/LLM:** Free and accessible LLM API (free forever that does not require credit card info)
   - **Deployment:** Vercel
 
 ## **1.0 User Authentication & Onboarding**
