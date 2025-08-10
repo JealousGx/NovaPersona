@@ -12,9 +12,5 @@ export const AuthButtons = () => {
     return <Login />;
   }
 
-  return (
-    <Link href="/dashboard" className="hover:underline">
-      Dashboard
-    </Link>
-  );
+  return <Link href="/dashboard">Dashboard</Link>;
 };
