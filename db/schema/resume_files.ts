@@ -18,7 +18,7 @@ export const resume_files = mysqlTable(
     id: serial("id"),
     user_id: int("user_id")
       .notNull()
-      .references(() => users.id),
+      .references(() => users.id, { onDelete: "cascade" }),
     file_url: varchar("file_url", { length: 1024 }).notNull(),
     file_name: varchar("file_name", { length: 255 }),
     mime_type: varchar("mime_type", { length: 64 }),

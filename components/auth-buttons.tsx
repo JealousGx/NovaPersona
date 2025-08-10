@@ -1,15 +1,20 @@
-import Link from "next/link";
-import React from "react";
+"use client";
+
+import { Login } from "./login";
+import { Link } from "./ui/link";
+
+import { authClient } from "@/lib/auth/client";
 
 export const AuthButtons = () => {
+  const { data: session, isPending } = authClient.useSession();
+
+  if (!session || isPending) {
+    return <Login />;
+  }
+
   return (
-    <React.Fragment>
-      <Link href="/login" className="hover:underline">
-        Login
-      </Link>
-      <Link href="/signup" className="hover:underline">
-        Sign Up
-      </Link>
-    </React.Fragment>
+    <Link href="/dashboard" className="hover:underline">
+      Dashboard
+    </Link>
   );
 };

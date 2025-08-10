@@ -1,8 +1,9 @@
 import {
+  boolean,
   index,
   int,
   mysqlTable,
-  serial,
+  text,
   timestamp,
   varchar,
 } from "drizzle-orm/mysql-core";
@@ -14,14 +15,66 @@ import {
 export const users = mysqlTable(
   "users",
   {
-    id: serial("id"), // PK
-    email: varchar("email", { length: 255 }).notNull().unique(), // unique
-    password_hash: varchar("password_hash", { length: 512 }), // nullable for social-only accounts
-    full_name: varchar("full_name", { length: 255 }),
+    id: varchar("id", { length: 36 }).primaryKey(),
+    name: text("name").notNull(),
+    email: varchar("email", { length: 255 }).notNull().unique(),
+    emailVerified: boolean("email_verified")
+      .$defaultFn(() => false)
+      .notNull(),
+    image: text("image"),
+    createdAt: timestamp("created_at")
+      .$defaultFn(() => /* @__PURE__ */ new Date())
+      .notNull(),
+    updatedAt: timestamp("updated_at")
+      .$defaultFn(() => /* @__PURE__ */ new Date())
+      .notNull(),
+    isAnonymous: boolean("is_anonymous"),
     professional_title: varchar("professional_title", { length: 255 }),
     has_onboarded: int("has_onboarded").default(0), // boolean-ish as integer for sqlite
-    created_at: timestamp("created_at").defaultNow(),
-    updated_at: timestamp("updated_at").defaultNow(),
   },
   (t) => [index("user_email_idx").on(t.email)]
 );
+
+export const session = mysqlTable("session", {
+  id: varchar("id", { length: 36 }).primaryKey(),
+  expiresAt: timestamp("expires_at").notNull(),
+  token: varchar("token", { length: 255 }).notNull().unique(),
+  createdAt: timestamp("created_at").notNull(),
+  updatedAt: timestamp("updated_at").notNull(),
+  ipAddress: text("ip_address"),
+  userAgent: text("user_agent"),
+  userId: varchar("user_id", { length: 36 })
+    .notNull()
+    .references(() => users.id, { onDelete: "cascade" }),
+});
+
+export const account = mysqlTable("account", {
+  id: varchar("id", { length: 36 }).primaryKey(),
+  accountId: text("account_id").notNull(),
+  providerId: text("provider_id").notNull(),
+  userId: varchar("user_id", { length: 36 })
+    .notNull()
+    .references(() => users.id, { onDelete: "cascade" }),
+  accessToken: text("access_token"),
+  refreshToken: text("refresh_token"),
+  idToken: text("id_token"),
+  accessTokenExpiresAt: timestamp("access_token_expires_at"),
+  refreshTokenExpiresAt: timestamp("refresh_token_expires_at"),
+  scope: text("scope"),
+  password: text("password"),
+  createdAt: timestamp("created_at").notNull(),
+  updatedAt: timestamp("updated_at").notNull(),
+});
+
+export const verification = mysqlTable("verification", {
+  id: varchar("id", { length: 36 }).primaryKey(),
+  identifier: text("identifier").notNull(),
+  value: text("value").notNull(),
+  expiresAt: timestamp("expires_at").notNull(),
+  createdAt: timestamp("created_at").$defaultFn(
+    () => /* @__PURE__ */ new Date()
+  ),
+  updatedAt: timestamp("updated_at").$defaultFn(
+    () => /* @__PURE__ */ new Date()
+  ),
+});

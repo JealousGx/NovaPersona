@@ -20,7 +20,7 @@ export const portfolio_settings = mysqlTable(
     id: serial("id"),
     user_id: int("user_id")
       .notNull()
-      .references(() => users.id),
+      .references(() => users.id, { onDelete: "cascade" }),
     template_id: varchar("template_id", { length: 255 })
       .notNull()
       .default("default"),

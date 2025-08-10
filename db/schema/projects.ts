@@ -19,7 +19,7 @@ export const projects = mysqlTable(
     id: serial("id"),
     user_id: int("user_id")
       .notNull()
-      .references(() => users.id),
+      .references(() => users.id, { onDelete: "cascade" }),
     project_name: varchar("project_name", { length: 255 }).notNull(),
     description: text("description"),
     project_url: varchar("project_url", { length: 512 }),

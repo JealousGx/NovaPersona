@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
 
-import { Button } from "@/components/ui/button";
+import { Link } from "@/components/ui/link";
 
 const features = [
   {
@@ -95,17 +95,22 @@ export default function Home() {
             your LinkedIn, and launch a stunning portfolio—all for free.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-base px-8 py-6 shadow-lg" asChild>
-              <a href="#get-started">Get Started</a>
-            </Button>
-            <Button
+            <Link
+              size="lg"
+              className="text-base px-8 py-6 shadow-lg"
+              href="#get-started"
+            >
+              Get Started
+            </Link>
+
+            <Link
+              className="text-base px-8 py-6"
               variant="outline"
               size="lg"
-              className="text-base px-8 py-6"
-              asChild
+              href="#features"
             >
-              <a href="#features">See how it works</a>
-            </Button>
+              See how it works
+            </Link>
           </div>
         </motion.div>
       </section>

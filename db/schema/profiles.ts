@@ -19,7 +19,7 @@ export const profiles = mysqlTable(
     id: serial("id"),
     user_id: int("user_id")
       .notNull()
-      .references(() => users.id),
+      .references(() => users.id, { onDelete: "cascade" }),
     resume_text: text("resume_text"), // extracted resume content
     linkedin_url: varchar("linkedin_url", { length: 512 }),
     public_bio: text("public_bio"),

@@ -17,7 +17,7 @@ export const skills = mysqlTable(
     id: serial("id"),
     user_id: int("user_id")
       .notNull()
-      .references(() => users.id),
+      .references(() => users.id, { onDelete: "cascade" }),
     skill_name: varchar("skill_name", { length: 255 }).notNull(),
     proficiency: int("proficiency").default(0), // 0-100 or small scale
     order_index: int("order_index").default(0),

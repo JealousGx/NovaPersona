@@ -19,7 +19,7 @@ export const experiences = mysqlTable(
     id: serial("id"),
     user_id: int("user_id")
       .notNull()
-      .references(() => users.id),
+      .references(() => users.id, { onDelete: "cascade" }),
     job_title: varchar("job_title", { length: 255 }).notNull(),
     company: varchar("company", { length: 255 }),
     start_date: timestamp("start_date"),

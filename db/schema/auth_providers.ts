@@ -19,7 +19,7 @@ export const auth_providers = mysqlTable(
     id: serial("id"),
     user_id: int("user_id")
       .notNull()
-      .references(() => users.id),
+      .references(() => users.id, { onDelete: "cascade" }),
     provider: varchar("provider", { length: 32 }).notNull(), // e.g., 'google', 'github'
     provider_user_id: varchar("provider_user_id", { length: 255 }).notNull(),
     provider_data: json("provider_data"), // raw provider JSON if needed
