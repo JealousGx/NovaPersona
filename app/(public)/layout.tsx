@@ -7,7 +7,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <React.Fragment>
       <header className="w-full z-20 sticky top-0 border-b border-border bg-background/80 backdrop-blur-md">
-        <div className="w-full max-w-5xl mx-auto flex items-center justify-between px-6 py-4">
+        <div className="w-full max-w-5xl mx-auto flex items-center justify-between px-6 py-2">
           <Logo />
 
           <nav className="flex gap-4 text-base">
