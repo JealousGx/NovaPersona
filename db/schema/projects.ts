@@ -16,8 +16,8 @@ import { users } from "./users";
 export const projects = mysqlTable(
   "projects",
   {
-    id: serial("id"),
-    user_id: int("user_id")
+    id: serial("id").primaryKey(),
+    user_id: varchar("user_id", { length: 36 })
       .notNull()
       .references(() => users.id, { onDelete: "cascade" }),
     project_name: varchar("project_name", { length: 255 }).notNull(),

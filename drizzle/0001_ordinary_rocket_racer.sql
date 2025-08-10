@@ -1,1 +1,0 @@
-ALTER TABLE `auth_providers` MODIFY COLUMN `user_id` varchar(36) NOT NULL;

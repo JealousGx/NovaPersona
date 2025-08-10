@@ -1,7 +1,7 @@
 {
   "version": "5",
   "dialect": "mysql",
-  "id": "d209a437-eda0-4e54-869a-9a39b0dc7ac8",
+  "id": "a4f59ca9-b7db-44cd-a61f-7fcc9257d62d",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "auth_providers": {
@@ -11,12 +11,12 @@
           "name": "id",
           "type": "serial",
           "primaryKey": false,
-          "notNull": false,
+          "notNull": true,
           "autoincrement": true
         },
         "user_id": {
           "name": "user_id",
-          "type": "int",
+          "type": "varchar(36)",
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false
@@ -75,7 +75,14 @@
           "onUpdate": "no action"
         }
       },
-      "compositePrimaryKeys": {},
+      "compositePrimaryKeys": {
+        "auth_providers_id": {
+          "name": "auth_providers_id",
+          "columns": [
+            "id"
+          ]
+        }
+      },
       "uniqueConstraints": {},
       "checkConstraint": {}
     },
@@ -86,12 +93,12 @@
           "name": "id",
           "type": "serial",
           "primaryKey": false,
-          "notNull": false,
+          "notNull": true,
           "autoincrement": true
         },
         "user_id": {
           "name": "user_id",
-          "type": "int",
+          "type": "varchar(36)",
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false
@@ -172,7 +179,14 @@
           "onUpdate": "no action"
         }
       },
-      "compositePrimaryKeys": {},
+      "compositePrimaryKeys": {
+        "experiences_id": {
+          "name": "experiences_id",
+          "columns": [
+            "id"
+          ]
+        }
+      },
       "uniqueConstraints": {},
       "checkConstraint": {}
     },
@@ -183,12 +197,12 @@
           "name": "id",
           "type": "serial",
           "primaryKey": false,
-          "notNull": false,
+          "notNull": true,
           "autoincrement": true
         },
         "user_id": {
           "name": "user_id",
-          "type": "int",
+          "type": "varchar(36)",
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false
@@ -264,7 +278,14 @@
           "onUpdate": "no action"
         }
       },
-      "compositePrimaryKeys": {},
+      "compositePrimaryKeys": {
+        "portfolio_settings_id": {
+          "name": "portfolio_settings_id",
+          "columns": [
+            "id"
+          ]
+        }
+      },
       "uniqueConstraints": {},
       "checkConstraint": {}
     },
@@ -275,12 +296,12 @@
           "name": "id",
           "type": "serial",
           "primaryKey": false,
-          "notNull": false,
+          "notNull": true,
           "autoincrement": true
         },
         "user_id": {
           "name": "user_id",
-          "type": "int",
+          "type": "varchar(36)",
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false
@@ -339,7 +360,14 @@
           "onUpdate": "no action"
         }
       },
-      "compositePrimaryKeys": {},
+      "compositePrimaryKeys": {
+        "profiles_id": {
+          "name": "profiles_id",
+          "columns": [
+            "id"
+          ]
+        }
+      },
       "uniqueConstraints": {},
       "checkConstraint": {}
     },
@@ -350,12 +378,12 @@
           "name": "id",
           "type": "serial",
           "primaryKey": false,
-          "notNull": false,
+          "notNull": true,
           "autoincrement": true
         },
         "user_id": {
           "name": "user_id",
-          "type": "int",
+          "type": "varchar(36)",
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false
@@ -444,7 +472,14 @@
           "onUpdate": "no action"
         }
       },
-      "compositePrimaryKeys": {},
+      "compositePrimaryKeys": {
+        "projects_id": {
+          "name": "projects_id",
+          "columns": [
+            "id"
+          ]
+        }
+      },
       "uniqueConstraints": {},
       "checkConstraint": {}
     },
@@ -455,12 +490,12 @@
           "name": "id",
           "type": "serial",
           "primaryKey": false,
-          "notNull": false,
+          "notNull": true,
           "autoincrement": true
         },
         "user_id": {
           "name": "user_id",
-          "type": "int",
+          "type": "varchar(36)",
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false
@@ -540,7 +575,14 @@
           "onUpdate": "no action"
         }
       },
-      "compositePrimaryKeys": {},
+      "compositePrimaryKeys": {
+        "resume_files_id": {
+          "name": "resume_files_id",
+          "columns": [
+            "id"
+          ]
+        }
+      },
       "uniqueConstraints": {},
       "checkConstraint": {}
     },
@@ -551,12 +593,12 @@
           "name": "id",
           "type": "serial",
           "primaryKey": false,
-          "notNull": false,
+          "notNull": true,
           "autoincrement": true
         },
         "user_id": {
           "name": "user_id",
-          "type": "int",
+          "type": "varchar(36)",
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false
@@ -616,7 +658,14 @@
           "onUpdate": "no action"
         }
       },
-      "compositePrimaryKeys": {},
+      "compositePrimaryKeys": {
+        "skills_id": {
+          "name": "skills_id",
+          "columns": [
+            "id"
+          ]
+        }
+      },
       "uniqueConstraints": {},
       "checkConstraint": {}
     },

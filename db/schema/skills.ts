@@ -14,8 +14,8 @@ import { users } from "./users";
 export const skills = mysqlTable(
   "skills",
   {
-    id: serial("id"),
-    user_id: int("user_id")
+    id: serial("id").primaryKey(),
+    user_id: varchar("user_id", { length: 36 })
       .notNull()
       .references(() => users.id, { onDelete: "cascade" }),
     skill_name: varchar("skill_name", { length: 255 }).notNull(),

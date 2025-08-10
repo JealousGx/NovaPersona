@@ -15,7 +15,7 @@ import { users } from "./users";
 export const auth_providers = mysqlTable(
   "auth_providers",
   {
-    id: serial("id"),
+    id: serial("id").primaryKey(),
     user_id: varchar("user_id", { length: 36 })
       .notNull()
       .references(() => users.id, { onDelete: "cascade" }),

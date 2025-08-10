@@ -1,6 +1,5 @@
 import {
   index,
-  int,
   json,
   mysqlTable,
   serial,
@@ -17,8 +16,8 @@ import { users } from "./users";
 export const portfolio_settings = mysqlTable(
   "portfolio_settings",
   {
-    id: serial("id"),
-    user_id: int("user_id")
+    id: serial("id").primaryKey(),
+    user_id: varchar("user_id", { length: 36 })
       .notNull()
       .references(() => users.id, { onDelete: "cascade" }),
     template_id: varchar("template_id", { length: 255 })

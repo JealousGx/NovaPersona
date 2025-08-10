@@ -16,8 +16,8 @@ import { users } from "./users";
 export const experiences = mysqlTable(
   "experiences",
   {
-    id: serial("id"),
-    user_id: int("user_id")
+    id: serial("id").primaryKey(),
+    user_id: varchar("user_id", { length: 36 })
       .notNull()
       .references(() => users.id, { onDelete: "cascade" }),
     job_title: varchar("job_title", { length: 255 }).notNull(),

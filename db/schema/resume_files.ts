@@ -15,8 +15,8 @@ import { users } from "./users";
 export const resume_files = mysqlTable(
   "resume_files",
   {
-    id: serial("id"),
-    user_id: int("user_id")
+    id: serial("id").primaryKey(),
+    user_id: varchar("user_id", { length: 36 })
       .notNull()
       .references(() => users.id, { onDelete: "cascade" }),
     file_url: varchar("file_url", { length: 1024 }).notNull(),

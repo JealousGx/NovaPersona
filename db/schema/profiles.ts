@@ -1,6 +1,5 @@
 import {
   index,
-  int,
   mysqlTable,
   serial,
   text,
@@ -16,8 +15,8 @@ import { users } from "./users";
 export const profiles = mysqlTable(
   "profiles",
   {
-    id: serial("id"),
-    user_id: int("user_id")
+    id: serial("id").primaryKey(),
+    user_id: varchar("user_id", { length: 36 })
       .notNull()
       .references(() => users.id, { onDelete: "cascade" }),
     resume_text: text("resume_text"), // extracted resume content
