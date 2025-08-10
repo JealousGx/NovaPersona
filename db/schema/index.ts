@@ -1,4 +1,3 @@
-export * from "./auth_provider";
 export * from "./experience";
 export * from "./portfolio_setting";
 export * from "./profile";
