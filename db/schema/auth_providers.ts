@@ -1,6 +1,5 @@
 import {
   index,
-  int,
   json,
   mysqlTable,
   serial,
@@ -17,7 +16,7 @@ export const auth_providers = mysqlTable(
   "auth_providers",
   {
     id: serial("id"),
-    user_id: int("user_id")
+    user_id: varchar("user_id", { length: 36 })
       .notNull()
       .references(() => users.id, { onDelete: "cascade" }),
     provider: varchar("provider", { length: 32 }).notNull(), // e.g., 'google', 'github'
