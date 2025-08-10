@@ -19,7 +19,7 @@ export function Logo() {
         quality={90}
       />
 
-      <span className="font-bold text-xl bg-gradient-to-r from-[#3f8bff] to-[#92a7bd] bg-clip-text text-transparent">
+      <span className="font-bold text-xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
         NovaPersona
       </span>
     </Link>
