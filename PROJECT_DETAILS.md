@@ -1,6 +1,6 @@
 # **AI-Powered Personal Branding Assistant: Feature Document**
 
-- **Project Name:** BrandSpark AI
+- **Project Name:** NovaPersona
 - **Vision:** To empower students and professionals to build a powerful and consistent personal brand online by leveraging AI for content optimization and portfolio creation.
 - **Core Technologies:**
   - **Application Framework:** Next.js (handling both frontend and backend logic via Server Actions/API Routes)
@@ -91,7 +91,7 @@
 - **User Flow:**
   1. The user navigates to the "Content Generator."
   2. They can select a content type: "LinkedIn Post" or "Resume Bullet Point."
-  3. For a LinkedIn post, they can input a topic (e.g., "my new project on BrandSpark AI"). The AI will generate a draft post.
+  3. For a LinkedIn post, they can input a topic (e.g., "my new project on NovaPersona"). The AI will generate a draft post.
   4. For a resume bullet point, they can describe a task, and the AI will rephrase it using the STAR (Situation, Task, Action, Result) method.
 - **Technical Implementation:**
   - Server Actions will be used to handle the user's input and make calls to the LLM with dynamic prompts.
@@ -106,7 +106,7 @@
   2. They can choose from a small selection of modern, clean templates.
   3. Upon selecting a template, the system generates a portfolio page populated with their profile information (name, title, experience, projects, skills).
 - **Technical Implementation:**
-  - The portfolio will be a dynamic route in the Next.js application (e.g., brandspark.ai/\[username\]).
+  - The portfolio will be a dynamic route in the Next.js application (e.g., NovaPersona.ai/\[username\]).
   - The templates will be pre-built React components.
   - When a user visits the portfolio URL, the page will fetch the user's public data from the database and render it into the chosen template.
 
