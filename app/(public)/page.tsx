@@ -51,7 +51,7 @@ export default function Home() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.2 }}
-        className="pointer-events-none fixed inset-0 z-0"
+        className="pointer-events-none fixed inset-0 -z-[8]"
       >
         <div
           className="absolute inset-0 opacity-80 animate-gradient-move"
