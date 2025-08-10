@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "start:db": "docker-compose up -d",
-    "stop:db": "docker-compose down"
+    "stop:db": "docker-compose down",
+    "drizzle:generate": "drizzle-kit generate"
   },
   "dependencies": {
     "@radix-ui/react-checkbox": "^1.3.2",
