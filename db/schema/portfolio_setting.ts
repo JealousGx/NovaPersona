@@ -6,20 +6,20 @@ import {
   timestamp,
   varchar,
 } from "drizzle-orm/mysql-core";
-import { users } from "./users";
+import { user } from "./user";
 
 /**
  * portfolio_settings
  * - Stores template choices and toggles for the generated portfolio page
  * - visible_sections stored as JSON text for sqlite (native JSON in mysql)
  */
-export const portfolio_settings = mysqlTable(
-  "portfolio_settings",
+export const portfolio_setting = mysqlTable(
+  "portfolio_setting",
   {
     id: serial("id").primaryKey(),
     user_id: varchar("user_id", { length: 36 })
       .notNull()
-      .references(() => users.id, { onDelete: "cascade" }),
+      .references(() => user.id, { onDelete: "cascade" }),
     template_id: varchar("template_id", { length: 255 })
       .notNull()
       .default("default"),

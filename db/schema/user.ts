@@ -12,8 +12,8 @@ import {
  * users
  * - Stores basic user account + onboarding info
  */
-export const users = mysqlTable(
-  "users",
+export const user = mysqlTable(
+  "user",
   {
     id: varchar("id", { length: 36 }).primaryKey(),
     name: text("name").notNull(),
@@ -45,7 +45,7 @@ export const session = mysqlTable("session", {
   userAgent: text("user_agent"),
   userId: varchar("user_id", { length: 36 })
     .notNull()
-    .references(() => users.id, { onDelete: "cascade" }),
+    .references(() => user.id, { onDelete: "cascade" }),
 });
 
 export const account = mysqlTable("account", {
@@ -54,7 +54,7 @@ export const account = mysqlTable("account", {
   providerId: text("provider_id").notNull(),
   userId: varchar("user_id", { length: 36 })
     .notNull()
-    .references(() => users.id, { onDelete: "cascade" }),
+    .references(() => user.id, { onDelete: "cascade" }),
   accessToken: text("access_token"),
   refreshToken: text("refresh_token"),
   idToken: text("id_token"),

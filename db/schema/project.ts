@@ -7,19 +7,19 @@ import {
   timestamp,
   varchar,
 } from "drizzle-orm/mysql-core";
-import { users } from "./users";
+import { user } from "./user";
 
 /**
  * projects
  * - User-linked projects displayed in portfolio
  */
-export const projects = mysqlTable(
-  "projects",
+export const project = mysqlTable(
+  "project",
   {
     id: serial("id").primaryKey(),
     user_id: varchar("user_id", { length: 36 })
       .notNull()
-      .references(() => users.id, { onDelete: "cascade" }),
+      .references(() => user.id, { onDelete: "cascade" }),
     project_name: varchar("project_name", { length: 255 }).notNull(),
     description: text("description"),
     project_url: varchar("project_url", { length: 512 }),

@@ -1,11 +1,11 @@
 {
   "version": "5",
   "dialect": "mysql",
-  "id": "a4f59ca9-b7db-44cd-a61f-7fcc9257d62d",
+  "id": "f119df9e-54b6-4cea-b049-799162cbc8be",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
-    "auth_providers": {
-      "name": "auth_providers",
+    "auth_provider": {
+      "name": "auth_provider",
       "columns": {
         "id": {
           "name": "id",
@@ -61,10 +61,10 @@
         }
       },
       "foreignKeys": {
-        "auth_providers_user_id_users_id_fk": {
-          "name": "auth_providers_user_id_users_id_fk",
-          "tableFrom": "auth_providers",
-          "tableTo": "users",
+        "auth_provider_user_id_user_id_fk": {
+          "name": "auth_provider_user_id_user_id_fk",
+          "tableFrom": "auth_provider",
+          "tableTo": "user",
           "columnsFrom": [
             "user_id"
           ],
@@ -76,8 +76,8 @@
         }
       },
       "compositePrimaryKeys": {
-        "auth_providers_id": {
-          "name": "auth_providers_id",
+        "auth_provider_id": {
+          "name": "auth_provider_id",
           "columns": [
             "id"
           ]
@@ -86,8 +86,8 @@
       "uniqueConstraints": {},
       "checkConstraint": {}
     },
-    "experiences": {
-      "name": "experiences",
+    "experience": {
+      "name": "experience",
       "columns": {
         "id": {
           "name": "id",
@@ -165,10 +165,10 @@
         }
       },
       "foreignKeys": {
-        "experiences_user_id_users_id_fk": {
-          "name": "experiences_user_id_users_id_fk",
-          "tableFrom": "experiences",
-          "tableTo": "users",
+        "experience_user_id_user_id_fk": {
+          "name": "experience_user_id_user_id_fk",
+          "tableFrom": "experience",
+          "tableTo": "user",
           "columnsFrom": [
             "user_id"
           ],
@@ -180,8 +180,8 @@
         }
       },
       "compositePrimaryKeys": {
-        "experiences_id": {
-          "name": "experiences_id",
+        "experience_id": {
+          "name": "experience_id",
           "columns": [
             "id"
           ]
@@ -190,8 +190,8 @@
       "uniqueConstraints": {},
       "checkConstraint": {}
     },
-    "portfolio_settings": {
-      "name": "portfolio_settings",
+    "portfolio_setting": {
+      "name": "portfolio_setting",
       "columns": {
         "id": {
           "name": "id",
@@ -264,10 +264,10 @@
         }
       },
       "foreignKeys": {
-        "portfolio_settings_user_id_users_id_fk": {
-          "name": "portfolio_settings_user_id_users_id_fk",
-          "tableFrom": "portfolio_settings",
-          "tableTo": "users",
+        "portfolio_setting_user_id_user_id_fk": {
+          "name": "portfolio_setting_user_id_user_id_fk",
+          "tableFrom": "portfolio_setting",
+          "tableTo": "user",
           "columnsFrom": [
             "user_id"
           ],
@@ -279,8 +279,8 @@
         }
       },
       "compositePrimaryKeys": {
-        "portfolio_settings_id": {
-          "name": "portfolio_settings_id",
+        "portfolio_setting_id": {
+          "name": "portfolio_setting_id",
           "columns": [
             "id"
           ]
@@ -289,8 +289,8 @@
       "uniqueConstraints": {},
       "checkConstraint": {}
     },
-    "profiles": {
-      "name": "profiles",
+    "profile": {
+      "name": "profile",
       "columns": {
         "id": {
           "name": "id",
@@ -346,10 +346,10 @@
         }
       },
       "foreignKeys": {
-        "profiles_user_id_users_id_fk": {
-          "name": "profiles_user_id_users_id_fk",
-          "tableFrom": "profiles",
-          "tableTo": "users",
+        "profile_user_id_user_id_fk": {
+          "name": "profile_user_id_user_id_fk",
+          "tableFrom": "profile",
+          "tableTo": "user",
           "columnsFrom": [
             "user_id"
           ],
@@ -361,8 +361,8 @@
         }
       },
       "compositePrimaryKeys": {
-        "profiles_id": {
-          "name": "profiles_id",
+        "profile_id": {
+          "name": "profile_id",
           "columns": [
             "id"
           ]
@@ -371,8 +371,8 @@
       "uniqueConstraints": {},
       "checkConstraint": {}
     },
-    "projects": {
-      "name": "projects",
+    "project": {
+      "name": "project",
       "columns": {
         "id": {
           "name": "id",
@@ -458,10 +458,10 @@
         }
       },
       "foreignKeys": {
-        "projects_user_id_users_id_fk": {
-          "name": "projects_user_id_users_id_fk",
-          "tableFrom": "projects",
-          "tableTo": "users",
+        "project_user_id_user_id_fk": {
+          "name": "project_user_id_user_id_fk",
+          "tableFrom": "project",
+          "tableTo": "user",
           "columnsFrom": [
             "user_id"
           ],
@@ -473,8 +473,8 @@
         }
       },
       "compositePrimaryKeys": {
-        "projects_id": {
-          "name": "projects_id",
+        "project_id": {
+          "name": "project_id",
           "columns": [
             "id"
           ]
@@ -483,8 +483,8 @@
       "uniqueConstraints": {},
       "checkConstraint": {}
     },
-    "resume_files": {
-      "name": "resume_files",
+    "resume_file": {
+      "name": "resume_file",
       "columns": {
         "id": {
           "name": "id",
@@ -561,10 +561,10 @@
         }
       },
       "foreignKeys": {
-        "resume_files_user_id_users_id_fk": {
-          "name": "resume_files_user_id_users_id_fk",
-          "tableFrom": "resume_files",
-          "tableTo": "users",
+        "resume_file_user_id_user_id_fk": {
+          "name": "resume_file_user_id_user_id_fk",
+          "tableFrom": "resume_file",
+          "tableTo": "user",
           "columnsFrom": [
             "user_id"
           ],
@@ -576,8 +576,8 @@
         }
       },
       "compositePrimaryKeys": {
-        "resume_files_id": {
-          "name": "resume_files_id",
+        "resume_file_id": {
+          "name": "resume_file_id",
           "columns": [
             "id"
           ]
@@ -586,8 +586,8 @@
       "uniqueConstraints": {},
       "checkConstraint": {}
     },
-    "skills": {
-      "name": "skills",
+    "skill": {
+      "name": "skill",
       "columns": {
         "id": {
           "name": "id",
@@ -644,10 +644,10 @@
         }
       },
       "foreignKeys": {
-        "skills_user_id_users_id_fk": {
-          "name": "skills_user_id_users_id_fk",
-          "tableFrom": "skills",
-          "tableTo": "users",
+        "skill_user_id_user_id_fk": {
+          "name": "skill_user_id_user_id_fk",
+          "tableFrom": "skill",
+          "tableTo": "user",
           "columnsFrom": [
             "user_id"
           ],
@@ -659,8 +659,8 @@
         }
       },
       "compositePrimaryKeys": {
-        "skills_id": {
-          "name": "skills_id",
+        "skill_id": {
+          "name": "skill_id",
           "columns": [
             "id"
           ]
@@ -766,10 +766,10 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "account_user_id_users_id_fk": {
-          "name": "account_user_id_users_id_fk",
+        "account_user_id_user_id_fk": {
+          "name": "account_user_id_user_id_fk",
           "tableFrom": "account",
-          "tableTo": "users",
+          "tableTo": "user",
           "columnsFrom": [
             "user_id"
           ],
@@ -853,10 +853,10 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "session_user_id_users_id_fk": {
-          "name": "session_user_id_users_id_fk",
+        "session_user_id_user_id_fk": {
+          "name": "session_user_id_user_id_fk",
           "tableFrom": "session",
-          "tableTo": "users",
+          "tableTo": "user",
           "columnsFrom": [
             "user_id"
           ],
@@ -885,8 +885,8 @@
       },
       "checkConstraint": {}
     },
-    "users": {
-      "name": "users",
+    "user": {
+      "name": "user",
       "columns": {
         "id": {
           "name": "id",
@@ -971,16 +971,16 @@
       },
       "foreignKeys": {},
       "compositePrimaryKeys": {
-        "users_id": {
-          "name": "users_id",
+        "user_id": {
+          "name": "user_id",
           "columns": [
             "id"
           ]
         }
       },
       "uniqueConstraints": {
-        "users_email_unique": {
-          "name": "users_email_unique",
+        "user_email_unique": {
+          "name": "user_email_unique",
           "columns": [
             "email"
           ]

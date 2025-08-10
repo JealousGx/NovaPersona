@@ -7,19 +7,19 @@ import {
   timestamp,
   varchar,
 } from "drizzle-orm/mysql-core";
-import { users } from "./users";
+import { user } from "./user";
 
 /**
  * experiences
  * - Work experience rows tied to a user
  */
-export const experiences = mysqlTable(
-  "experiences",
+export const experience = mysqlTable(
+  "experience",
   {
     id: serial("id").primaryKey(),
     user_id: varchar("user_id", { length: 36 })
       .notNull()
-      .references(() => users.id, { onDelete: "cascade" }),
+      .references(() => user.id, { onDelete: "cascade" }),
     job_title: varchar("job_title", { length: 255 }).notNull(),
     company: varchar("company", { length: 255 }),
     start_date: timestamp("start_date"),

@@ -6,19 +6,19 @@ import {
   timestamp,
   varchar,
 } from "drizzle-orm/mysql-core";
-import { users } from "./users";
+import { user } from "./user";
 
 /**
  * resume_files
  * - Stores uploaded resume file metadata (R2 url etc)
  */
-export const resume_files = mysqlTable(
-  "resume_files",
+export const resume_file = mysqlTable(
+  "resume_file",
   {
     id: serial("id").primaryKey(),
     user_id: varchar("user_id", { length: 36 })
       .notNull()
-      .references(() => users.id, { onDelete: "cascade" }),
+      .references(() => user.id, { onDelete: "cascade" }),
     file_url: varchar("file_url", { length: 1024 }).notNull(),
     file_name: varchar("file_name", { length: 255 }),
     mime_type: varchar("mime_type", { length: 64 }),
