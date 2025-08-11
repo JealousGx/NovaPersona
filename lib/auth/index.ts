@@ -5,6 +5,7 @@ import { anonymous } from "better-auth/plugins";
 import * as schema from "@/db/schema";
 
 import { db } from "@/db";
+import { headers } from "next/headers";
 
 export const auth = betterAuth({
   database: drizzleAdapter(db, {
@@ -19,3 +20,16 @@ export const auth = betterAuth({
     },
   },
 });
+
+export const getSession = async () => {
+  const _auth = await auth.api.getSession({
+    headers: await headers(),
+  });
+
+  return (
+    _auth ?? {
+      session: undefined,
+      user: undefined,
+    }
+  );
+};
