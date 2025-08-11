@@ -33,7 +33,7 @@ export default function PortfolioPage() {
             Manage and customize your public portfolio. Your portfolio is live
             at:{" "}
             <span className="underline">
-              {new URL(process.env.APP_URL!).hostname}/username
+              {new URL(process.env.NEXT_PUBLIC_APP_URL!).hostname}/username
             </span>
           </CardDescription>
         </CardHeader>

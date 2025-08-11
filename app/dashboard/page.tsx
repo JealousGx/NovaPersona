@@ -86,7 +86,10 @@ export default function Dashboard() {
                 Actionable steps to improve your personal brand.
               </CardDescription>
             </div>
-            <Link href="/dashboard/profile">
+            <Link
+              href="/dashboard/profile"
+              className="ml-auto flex items-center gap-2 hover:underline underline-offset-2 text-sm font-medium"
+            >
               View All
               <ArrowUpRight className="h-4 w-4" />
             </Link>
