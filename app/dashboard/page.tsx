@@ -8,7 +8,6 @@ import {
 import Link from "next/link";
 
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -16,6 +15,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Link as CustomLink } from "@/components/ui/link";
 
 export default function Dashboard() {
   return (
@@ -107,9 +107,14 @@ export default function Dashboard() {
                   Let AI analyze your experience and suggest improvements.
                 </p>
               </div>
-              <Button variant="outline" size="sm" className="ml-auto">
+              <CustomLink
+                href="/dashboard/profile"
+                variant="outline"
+                size="sm"
+                className="ml-auto"
+              >
                 Go
-              </Button>
+              </CustomLink>
             </div>
             <div className="flex items-center gap-4 p-2 rounded-lg hover:bg-muted/50">
               <Avatar className="hidden h-9 w-9 sm:flex">
@@ -123,9 +128,14 @@ export default function Dashboard() {
                   Create a post about your latest project.
                 </p>
               </div>
-              <Button variant="outline" size="sm" className="ml-auto">
+              <CustomLink
+                href="/dashboard/content-generator"
+                variant="outline"
+                size="sm"
+                className="ml-auto"
+              >
                 Go
-              </Button>
+              </CustomLink>
             </div>
             <div className="flex items-center gap-4 p-2 rounded-lg hover:bg-muted/50">
               <Avatar className="hidden h-9 w-9 sm:flex">
@@ -139,9 +149,14 @@ export default function Dashboard() {
                   Choose a template and color scheme.
                 </p>
               </div>
-              <Button variant="outline" size="sm" className="ml-auto">
+              <CustomLink
+                href="/dashboard/portfolio"
+                variant="outline"
+                size="sm"
+                className="ml-auto"
+              >
                 Go
-              </Button>
+              </CustomLink>
             </div>
           </CardContent>
         </Card>
